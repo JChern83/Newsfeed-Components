@@ -128,6 +128,7 @@ const createArticle = (
   const articleThirdP = document.createElement('p');
   const articleBtn = document.createElement('span');
 
+  //Append
   article.appendChild(titleOfArticle);
   article.appendChild(dateOfArticle);
   article.appendChild(articleFirstP);
@@ -135,9 +136,12 @@ const createArticle = (
   article.appendChild(articleThirdP);
   article.appendChild(articleBtn);
 
+  //Add class names
   article.classList.add('article');
   dateOfArticle.classList.add('date');
   articleBtn.classList.add('expandButton');
+
+  // Set text content
 
   titleOfArticle.textContent = title;
   dateOfArticle.textContent = date;
@@ -146,12 +150,16 @@ const createArticle = (
   articleThirdP.textContent = thirdParagraph;
   articleBtn.textContent = 'Expand';
 
+
+//Event Listener for toggle
   articleBtn.addEventListener('click', () => {
     article.classList.toggle('article-open');
   });
-  // console.log(article);
   return article;
 };
+
+//Create Articles
+
 const articleall = document.querySelector('.articles');
 data.forEach(item => {
   articleall.appendChild(
